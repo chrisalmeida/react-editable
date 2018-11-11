@@ -1,6 +1,6 @@
 # React Editable
 
-Making use of react hooks for editing React components in place.
+Making use of React hooks for editing components in place.
 
 ### Installation
 
