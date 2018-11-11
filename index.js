@@ -7,17 +7,13 @@ const Editable = ({ render, eventType }) => {
 
   // Make component uneditable when event occurs outside of this component
   const handleEvent = ({ target }) => {
-    if (componentClicked)
-      if (!componentClicked.contains(target)) setEditing(false)
+    if (componentClicked) if (!componentClicked.contains(target)) setEditing(false)
   }
 
   // Add or remove event listeners
   const updateListeners = attr => {
-    if (eventType) {
-      document[attr](eventType, handleEvent, false)
-    } else {
-      document[attr]('click', handleEvent, false)
-    }
+    const type = eventType ? eventType : 'click'
+    document[attr](type, handleEvent, false)
   }
 
   useEffect(() => {
